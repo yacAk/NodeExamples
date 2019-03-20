@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  script(src='/js/bootstrap.min.js')
+  script(src='/js/jquery.min.js')
+  .container
+    .row.justify-content-center.allign-middle
+      .col-md-8 
+        .card
+          .card-header Login
+          .card-body
+            form.form-horizontal(method='post', action='/users/login', enctype='multipart/form-data')
+              .form-group
+                label.cols-sm-2.control-label(for='username') User name
+                .cols-sm-10
+                  .input-group
+                    span.input-group-addon
+                      i.fa.fa-users.fa(aria-hidden='true')
+                    input#username.form-control(type='text', name='username', placeholder='Enter your User name')
+              .form-group
+                label.cols-sm-2.control-label(for='password') Password
+                .cols-sm-10
+                  .input-group
+                    span.input-group-addon
+                      i.fa.fa-lock.fa-lg(aria-hidden='true')
+                    input#password.form-control(type='password', name='password', placeholder='Enter your Password')     
+              .form-group
+                button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit') Login
+              .login-register
+                a(href='/users/register') Register
